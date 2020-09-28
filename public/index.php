@@ -1,5 +1,7 @@
 <?php 
+session_start();
 require_once '../config/functions.php';
+require 'auth.php';
     
     bem_head('Главная');
     bem_header('Мои файлы')
