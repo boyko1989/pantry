@@ -151,8 +151,52 @@ echo '<!DOCTYPE html>
 }
 
 function bom_header($h1) {
-    echo '<h1>'.$h1.'</h1>';
+    echo ' <body>
+	<header>
+        <h1>'.$h1.'</h1>';
+		//search();
+		echo '<a href="login.php"><li class="menu">Выйти</li></a>       
+    </header>';
 }
 
+function menu() {
+	echo '<ul>
+		<a href="#">
+			<li class="menu">Фото</li>
+		</a>
+		<a href="#">
+			<li class="menu">Фильмы</li>
+		</a>
+		<a href="#">
+			<li class="menu">Музыка</li>
+		</a>
+		<a href="#">
+			<li class="menu">Курсы</li>
+		</a>
+		<a href="#">
+			<li class="menu">Программы</li>
+		</a>
+		<a href="#">
+			<li class="menu">3D-модели</li>
+		</a>
+		<a href="#">
+			<li class="menu">Документы</li>
+		</a>';		
+}
+
+function footer() {
+	echo '<footer class="footer"><br>
+		<a href="/">На главную</a>
+		<a href="javascript:history.go(-1)">/ На предыдущую</a><br>';
+
+		$bytes = disk_free_space(".");
+		$gigabytes = $bytes/1024*1024*1024;
+	echo 'Свободного места на диске: '. $bytes . 'байт';
+	echo '</footer>'; 
+}
 
 ?>
+
+
+
+
