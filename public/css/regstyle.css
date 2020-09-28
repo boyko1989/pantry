@@ -1,0 +1,89 @@
+@font-face {
+    font-family: Merriweather;
+    src: url(../css/fonts/merriweather/merriweatherlight.woff2);
+}
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Merriweather;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(img/startbg.jpg);
+    background-size: 100%;
+    box-shadow: 0 0 60px 60px #fff inset;
+    position: relative;       
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;      
+}
+
+.container {            
+    margin: auto;
+    text-align: center;   
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 10px #fff;
+    
+}
+h1 {
+    margin: 15px;
+    font-size: 50px;
+}
+
+a,
+a:visited {
+    text-decoration: none;               
+    list-style-type: none;
+    color: #fff;                
+}
+
+li{
+    padding: 15px;
+    margin: 12px;
+    background-color: rgb(223, 202, 175);
+    box-shadow: 0 0 3px 3px rgb(223, 202, 175);
+    border-radius: 12px;
+}
+li:hover {
+    opacity: 0.32;
+    color: #000; 
+}
+input[type="text"]
+input[type="email"]
+input[type="password"] {
+    outline: 0 !important;
+    border: none;
+    padding: 15px;
+    border-bottom: solid 3px rgb(223, 202, 175);
+    box-shadow: 0 0 3px 3px rgb(223, 202, 175);
+}
+
+input[type="submit"],
+input[type="file"],
+input[type="reset"] {
+    outline: none;
+    border: none;
+    padding: 15px;
+    margin: 12px;
+    background-color: rgb(223, 202, 175);
+    box-shadow: 0 0 3px 3px rgb(223, 202, 175);
+    border-radius: 12px;
+    color: #fff;
+}
+input[type="submit"]:hover,
+input[type="file"]:hover,
+input[type="reset"]:hover {
+    opacity: 0.32;
+    color: #000; 
+}
+
+label {
+    margin: 10px 10px;
+}
+
+main {
+    margin: 40px;
+}

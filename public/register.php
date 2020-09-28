@@ -41,8 +41,31 @@ if(isset($_POST['submit']))
 }
 ?>
 
-<form method="POST">  
-    Логин <input name="login" type="text" required><br>
-    Пароль <input name="password" type="password" required><br>
-    <input name="submit" type="submit" value="Зарегистрироваться">
-</form>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="css/regstyle.css" rel="stylesheet">
+        
+        <title>Регистрация</title>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Регистрация</h1>
+            </header>
+            <main>
+                <form class="form" method="POST">
+                    <label>Логин</label><br><br>
+                    <input type="text" name="login" required><br><br>
+                    
+                    <label>Пароль</label><br><br>
+                    <input type="password" name="password" required><br><br>
+
+                    <input type="submit" value="Зарегистрироваться"><br><br>
+                </form>
+            </main>
+        </div>      
+    </body>
+</html>
