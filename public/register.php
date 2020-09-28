@@ -63,7 +63,7 @@ if(isset($_POST['submit']))
                     <label>Пароль</label><br><br>
                     <input type="password" name="password" required><br><br>
 
-                    <input type="submit" value="Зарегистрироваться"><br><br>
+                    <input name="submit" type="submit" value="Зарегистрироваться"><br><br>
                 </form>
             </main>
         </div>      

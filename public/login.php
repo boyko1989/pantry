@@ -52,7 +52,6 @@ if(isset($_POST['submit']))
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -74,9 +73,9 @@ if(isset($_POST['submit']))
                     <label>Пароль</label><br><br>
                     <input type="password" name="password" required><br><br>
 
-                    <input type="submit" value="Вход"><br><br>
-                </form>
+                    <input name="submit" type="submit" value="Войти"><br><br>
+                </form> 
             </main>
         </div>      
     </body>
-</html>
+</html>           
