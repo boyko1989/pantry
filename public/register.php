@@ -1,7 +1,5 @@
 
 <?php
-// Страница регистрации нового пользователя
-// Соединяемся с БД
 require_once '../config/connect.php';/*
 if(isset($_POST['submit']))
 {
@@ -31,7 +29,7 @@ if(isset($_POST['submit']))
 
         mysqli_query($link,"INSERT INTO users SET user_login='".$login."', user_password='".$password."'");
         //var_dump(headers_list());
-        header("Location: login.php"); exit();/*
+        /*header("Location: login.php"); exit();/*
     }
     else
     {
