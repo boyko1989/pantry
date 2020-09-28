@@ -1,8 +1,8 @@
-<?
+<?php
+require_once '../config/connect.php';
 // Скрипт проверки
 
 // Соединяемся с БД
-$link=mysqli_connect("localhost", "mysql_user", "mysql_password", "testtable");
 
 if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
 {

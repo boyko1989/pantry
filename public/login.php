@@ -1,4 +1,5 @@
-<?
+<?php
+require_once '../config/connect.php';
 // Страница авторизации
 
 // Функция для генерации случайной строки
@@ -13,8 +14,6 @@ function generateCode($length=6) {
 }
 
 // Соединяемся с БД
-$link=mysqli_connect("localhost", "mysql_user", "mysql_password", "testtable");
-
 if(isset($_POST['submit']))
 {
     // Вытаскиваем из БД запись, у которой логин равняется введенному
