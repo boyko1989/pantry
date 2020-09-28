@@ -26,7 +26,7 @@ if(isset($_POST['submit']))
         // Генерируем случайное число и шифруем его
         $hash = md5(generateCode(10));
 
-        if(!empty($_POST['not_attach_ip']))
+        /*if(!empty($_POST['not_attach_ip']))
         {
             // Если пользователя выбрал привязку к IP
             // Переводим IP в строку
@@ -34,7 +34,10 @@ if(isset($_POST['submit']))
         }
 
         // Записываем в БД новый хеш авторизации и IP
-        mysqli_query($link, "UPDATE users SET user_hash='".$hash."' ".$insip." WHERE user_id='".$data['user_id']."'");
+        mysqli_query($link, "UPDATE users SET user_hash='".$hash."' ".$insip." WHERE user_id='".$data['user_id']."'");*/
+
+        //То же только без IP
+        mysqli_query($link, "UPDATE users SET user_hash='".$hash."' WHERE user_id='".$data['user_id']."'");
 
         // Ставим куки
         setcookie("id", $data['user_id'], time()+60*60*24*30, "/");
@@ -52,6 +55,6 @@ if(isset($_POST['submit']))
 <form method="POST">
 Логин <input name="login" type="text" required><br>
 Пароль <input name="password" type="password" required><br>
-Не прикреплять к IP(не безопасно) <input type="checkbox" name="not_attach_ip"><br>
+<!--Не прикреплять к IP(не безопасно) <input type="checkbox" name="not_attach_ip"><br>-->
 <input name="submit" type="submit" value="Войти">
 </form>
