@@ -128,9 +128,9 @@ function hello_form () {
         <main>
             <div class="buttons">
                 <ul>
-                    <a href="login.php"><li class="menu">Начать</li></a>
+                    <a href="small_reg.php"><li class="menu">Начать</li></a>
                     <a href="login.php"><li class="menu">Войти</li></a>
-                    <a href="login.php"><li class="menu">Зарегистрироваться</li></a>
+                    <a href="register.php"><li class="menu">Зарегистрироваться</li></a>
                 </ul>
             </div>
         </main>
@@ -155,7 +155,7 @@ function bem_header($h1) {
 	<header>
         <h1>'.$h1.'</h1>';
 		//search();
-		echo '<a href="signout.php"><li class="menu">Выйти</li></a>       
+		echo '<a href="logout.php"><li class="menu">Выйти</li></a>       
     </header>';
 }
 

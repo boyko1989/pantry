@@ -40,7 +40,8 @@ if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
     }
     else
     {
-        print "Привет, ".$userdata['user_login'].". Всё работает!";
+        //print "Привет, ".$userdata['user_login'].". Всё работает!";
+        header("Location: index.php"); exit();
     }
 }
 else

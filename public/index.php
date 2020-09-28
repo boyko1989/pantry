@@ -1,8 +1,9 @@
 <?php 
 session_start();
 require_once '../config/functions.php';
-require 'auth.php';
-    
+if (!isset($_COOKIE['id'])) {
+    hello_form();
+} else {
     bem_head('Главная');
     bem_header('Мои файлы')
     ?>
@@ -12,10 +13,8 @@ require 'auth.php';
             <div class="con_menu">
     <?php  
         menu1(); 
-        menu2();    
-        
-    echo '</div><div class="doubleline3"></div>';
-
+        menu2();               
+        echo '</div><div class="doubleline3"></div>';
         listing();
     ?>    
             <div class="doubleline"> 
@@ -25,4 +24,4 @@ require 'auth.php';
     </body>
     </html>
     <?php footer(); 
-?>
+} ?>
