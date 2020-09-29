@@ -1,7 +1,7 @@
 <?php
     $servername = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "XE2Z5NMNXE2Z5NMN";
     $dbname = "pantry";
 
     $link = mysqli_connect($servername, $username, $password, $dbname) or die('Ошибка соединения с базой данных!');
