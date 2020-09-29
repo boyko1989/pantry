@@ -2,7 +2,9 @@
 session_start();
 require_once '../config/functions.php';
 if (!isset($_COOKIE['id'])) {
-    hello_form();
+    hello_form(); exit;
+} elseif ($_SESSION['profile'] == 'guest') {
+    echo 'Гостевой профиль пользователя ' . $_SESSION['login'];
 } else {
     bem_head('Главная');
     bem_header('Мои файлы')

@@ -28,7 +28,7 @@ if(isset($_POST['submit']))
 
         mysqli_query($link,"INSERT INTO users SET user_login='".$login."', user_password='".$password."'");
        
-        header("Location: login.php"); exit();
+        header("Location: index.php"); exit();
     }
     else
     {
