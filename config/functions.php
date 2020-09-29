@@ -128,9 +128,9 @@ function hello_form () {
         <main>
             <div class="buttons">
                 <ul>
-                    <a href="login.php"><li class="menu">Начать</li></a>
+                    <a href="small_reg.php"><li class="menu">Начать</li></a>
                     <a href="login.php"><li class="menu">Войти</li></a>
-                    <a href="login.php"><li class="menu">Зарегистрироваться</li></a>
+                    <a href="register.php"><li class="menu">Зарегистрироваться</li></a>
                 </ul>
             </div>
         </main>
@@ -139,7 +139,7 @@ function hello_form () {
 </html>';
 }
 
-function bom_head($title) {
+function bem_head($title) {
 echo '<!DOCTYPE html>
 <html>
 <head>
@@ -150,16 +150,16 @@ echo '<!DOCTYPE html>
     </head>';
 }
 
-function bom_header($h1) {
+function bem_header($h1) {
     echo ' <body>
 	<header>
         <h1>'.$h1.'</h1>';
 		//search();
-		echo '<a href="login.php"><li class="menu">Выйти</li></a>       
+		echo '<a href="logout.php"><li class="menu">Выйти</li></a>       
     </header>';
 }
 
-function menu() {
+function menu1() {
 	echo '<ul>
 		<a href="#">
 			<li class="menu">Фото</li>
@@ -184,6 +184,74 @@ function menu() {
 		</a>';		
 }
 
+function menu2() {
+	echo '<hr color="black" noshade size="1px">
+        
+    <ul>
+        <a href="admin/reports.php">
+            <li class="menu">Системы</li>
+        </a>
+        <a href="files/01 - Видеофайлы/3 - Для души/Фильмы/">
+            <li class="menu">Проекты</li>
+        </a>
+        <a href="files/03 - Аудио/Музыка/">
+            <li class="menu">Планирование</li>
+        </a>
+        <a href="files/00 - Курсы/">
+            <li class="menu">Резервные копии</li>
+        </a>                 
+    </ul>';		
+}
+
+function listing() {
+    echo '<ul class="listing">
+
+    <a class="list" href="content/planning.php">
+        <li>Организация и планирование</li>
+    </a>
+
+    <a class="list" href="content/cooking.php">
+        <li>Кулинария</li>
+    </a>
+
+    <a class="list" href="content/handiwork.php">
+        <li>Рукоделие</li>
+    </a>
+
+    <a class="list" href="content/compscience.php">
+        <li>Компьютерные науки</li>
+    </a>
+
+    <a class="list" href="content/languages.php">
+        <li>Языки</li>
+    </a>
+
+    <a class="list" href="content/building.php">
+        <li>Строительство</li>
+    </a>
+
+    <a class="list" href="content/joinery.php">
+        <li>Столярно-мебельное дело</li>
+    </a>
+
+    <a class="list" href="content/psychology.php">
+        <li>Психология</li>
+    </a>
+
+    <a class="list" href="content/economy.php">
+        <li>Экономика</li>
+    </a>
+
+    <a class="list" href="content/design.php">
+        <li>Дизайн интерьеров</li>
+    </a>
+
+    <a class="list" href="content/design.php">
+        <li>Список имущества</li>
+    </a>
+</ul>';
+}
+
 function footer() {
 	echo '<footer class="footer"><br>
 		<a href="/">На главную</a>
@@ -196,7 +264,3 @@ function footer() {
 }
 
 ?>
-
-
-
-
