@@ -1,15 +1,8 @@
 <?php
 session_start();
 require_once '../config/connect.php';
-function generateCode($length=6) {
-    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHI JKLMNOPRQSTUVWXYZ0123456789";
-    $code = "";
-    $clen = strlen($chars) - 1;
-    while (strlen($code) < $length) {
-            $code .= $chars[mt_rand(0,$clen)];
-    }
-    return $code;
-}
+require_once '../config/functions.php';
+
 //если в массиве ПОСТ появляется значение в ключе логин, тогда делаем запрос к БД
 if (isset($_POST['login'])) {
     $query = mysqli_query($link, "SELECT guest_id FROM guest WHERE guest_login='".mysqli_real_escape_string($link, $_POST['login'])."'");
@@ -30,13 +23,16 @@ if (isset($_POST['login'])) {
                 mysqli_query($link,"INSERT INTO guest SET guest_login='".$login."', guest_hash='".$hash."'");
 
                 //Создам куки у пользователя
-                setcookie("id", "", time() - 3600*24, "/");
-                setcookie("hash", "", time() - 3600*24, "/", null, null, true);
-                    print_r($_COOKIE['id']);
+                //setcookie("id", "", time() - 3600*24, "/");
+                //setcookie("hash", "", time() - 3600*24, "/", null, null, true);
+                    //print_r($_COOKIE['id']);
 
                 //И отправляемся на начальную страницу 
                 //Как вариант для следующей строки: http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']        
-                header("Location: index.php"); exit();
+                $_SESSION['login'] = $login;
+                $_SESSION['hash'] = $hash;
+                $_SESSION['profile_guest'] = 'guest';
+                header("Location: /"); exit();
             } 
 
             //Если есть ошибки при вводе логина, то вывести их список на экран
@@ -50,9 +46,10 @@ if (isset($_POST['login'])) {
     //если запрос выдал больше нуля строк, 
     //тогда создаём сессию и записываем туда тип профиля и логин пользователя и отправляемся на начальную страницу
     if(mysqli_num_rows($query) > 0) {
-        $_SESSION['profile'] = 'guest';
+        $_SESSION['profile_guest'] = 'guest';
         $_SESSION['login'] = $_POST['login'];
-        header("Location: index.php");
+        $_SESSION['hash'] = $hash;
+        header("Location: /");
         exit;
     }
 }

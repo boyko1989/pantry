@@ -1,12 +1,16 @@
 <?
+session_start();
+session_destroy();
+header("Location: /"); exit();
 // Страница разавторизации
 
 // Удаляем куки
+/*
 setcookie("id", "", time() - 3600*24*30*12, "/");
 setcookie("hash", "", time() - 3600*24*30*12, "/",null,null,true); // httponly !!!
 
 // Переадресовываем браузер на страницу проверки нашего скрипта
-header("Location: /"); exit;
+header("Location: /"); exit;*/
 
 ?><!--
 <form method="POST">
