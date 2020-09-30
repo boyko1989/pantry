@@ -128,7 +128,7 @@ function hello_form () {
         <main>
             <div class="buttons">
                 <ul>
-                    <a href="small_reg.php"><li class="menu">Начать</li></a>
+                    <a href="smallreg.php"><li class="menu">Начать</li></a>
                     <a href="login.php"><li class="menu">Войти</li></a>
                     <a href="register.php"><li class="menu">Зарегистрироваться</li></a>
                 </ul>
