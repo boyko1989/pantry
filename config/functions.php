@@ -161,7 +161,7 @@ function bem_header($h1) {
 
 function menu1() {
 	echo '<ul>
-		<a href="#">
+		<a href="galary.php">
 			<li class="menu">Фото</li>
 		</a>
 		<a href="#">
@@ -271,6 +271,19 @@ function generateCode($length=6) {
             $code .= $chars[mt_rand(0,$clen)];
     }
     return $code;
+}
+
+function get_images($dir) {
+    $files = scandir($dir);    
+    $pattern = '/\.(jpe?g|png|gif)$/mi';
+    //$pattern = "#\.(jpe?g|png|gif|JPG)$#";
+    //$pattern = "#\.(jpe?g)$#";
+    foreach ($files as $key => $file) {
+        if (!preg_match($pattern, $file)){
+            unset($files[$key]);
+        }
+    }
+    return $files;
 }
 
 ?>
