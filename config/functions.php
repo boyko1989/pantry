@@ -161,7 +161,7 @@ function bem_header($h1) {
 
 function menu1() {
 	echo '<ul>
-		<a href="#">
+		<a href="galary.php">
 			<li class="menu">Фото</li>
 		</a>
 		<a href="#">
@@ -271,6 +271,12 @@ function generateCode($length=6) {
             $code .= $chars[mt_rand(0,$clen)];
     }
     return $code;
+}
+
+function get_images($dir) {
+    $files = scandir($dir);    
+    unset($files[0], $files[1]);
+    return $files;
 }
 
 ?>
