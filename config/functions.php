@@ -275,7 +275,14 @@ function generateCode($length=6) {
 
 function get_images($dir) {
     $files = scandir($dir);    
-    unset($files[0], $files[1]);
+    $pattern = '/\.(jpe?g|png|gif)$/mi';
+    //$pattern = "#\.(jpe?g|png|gif|JPG)$#";
+    //$pattern = "#\.(jpe?g)$#";
+    foreach ($files as $key => $file) {
+        if (!preg_match($pattern, $file)){
+            unset($files[$key]);
+        }
+    }
     return $files;
 }
 
